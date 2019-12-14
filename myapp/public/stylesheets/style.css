@@ -1,4 +1,4 @@
-body {
+/* body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -10,4 +10,19 @@ a {
 canvas {
   width: 400px; height: 50px;
   border: solid #008080;
-  }
+  } */
+
+/* #canvas-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+*/
+#canvas{
+  background-color:#FFFFFF;
+  border: solid 5px #008080;
+  width: 100%;
+  height: 45%;
+}
