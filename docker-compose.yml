@@ -1,0 +1,45 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ./docker      # Dockerfile保存場所
+      dockerfile: Dockertfile-web    # Dockerfileファイル名
+    image: nn-web      # docker image name
+    container_name: nn-web       # docker container name
+    
+    ports:
+      - 80:80
+  app:
+    build:
+      context: ./docker/construct_app      # Dockerfile保存場所
+      dockerfile: Dockerfile-app    # Dockerfileファイル名
+    image: n-app                  # イメージ名
+    container_name: n-app         # コンテナ名
+    environment:
+      - NODE_ENV=production
+      - MONGO_DATABASE=mongodb://mongodb/myapp
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+    ports:                          # ポート接続
+      - 3000:3000
+    volumes:                        # mount workdir
+      - ./myapp:/src
+    #command: bash 
+    command: [sh, -c, npm install && npm install -g nodemon && npm install socket.io  && npm install mongoose  &&npm start]
+  mongodb:
+    image: mongo:latest
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    ports:
+      - 27017:27017
+    command:
+      - mongod
+  mongo_seed:
+    build: mongo_seed
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
