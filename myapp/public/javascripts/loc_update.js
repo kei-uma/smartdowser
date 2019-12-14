@@ -38,7 +38,7 @@ $.ajax({
         // ctx.arc(x/10, x/10, 1, 0, 2 * Math.PI);
 
         var circle = new Path2D();
-        circle.arc(x/10, y/10, 1, 0, 2 * Math.PI);
+        circle.arc(x/10, y/10, 2, 0, 2 * Math.PI);
         ctx.fill(circle);
 
         // ctx.fill();
