@@ -1,5 +1,5 @@
 [
-  { "name": "user_1", "x": 0, "y":0, "step":0},
-  { "name": "user_2", "x": 0, "y":0, "step":0},
-  { "name": "user_3", "x": 0, "y":0, "step":0}
+  { "name": "user_1", "x": 1410, "y":710, "step":0},
+  { "name": "user_2", "x": 1410, "y":710, "step":0},
+  { "name": "user_3", "x": 1410, "y":710, "step":0}
 ]
